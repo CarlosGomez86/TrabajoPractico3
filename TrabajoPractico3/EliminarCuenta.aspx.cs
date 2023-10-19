@@ -20,13 +20,13 @@ namespace TrabajoPractico3
         {
             if(RadioButtonList1.SelectedIndex == 0)
             {
-                this.SqlDataSource1.SelectParameters["idC"].DefaultValue = this.TextBox1.Text;
+                this.SqlDataSource1.SelectParameters["id"].DefaultValue = this.TextBox1.Text;
                 this.SqlDataSource1.DataSourceMode = SqlDataSourceMode.DataReader;
                 SqlDataReader datos;
                 datos = (SqlDataReader)this.SqlDataSource1.Select(DataSourceSelectArguments.Empty);
                 if (datos.Read())
                 {
-                    Label4.Text =  datos["idC"].ToString();
+                    Label4.Text =  datos["id"].ToString();
                     Label5.Text = datos["descripcion"].ToString();
                 }
                 else
@@ -41,7 +41,7 @@ namespace TrabajoPractico3
                 datos = (SqlDataReader)this.SqlDataSource2.Select(DataSourceSelectArguments.Empty);
                 if (datos.Read())
                 {
-                    Label4.Text =  datos["idC"].ToString();
+                    Label4.Text =  datos["id"].ToString();
                     Label5.Text = datos["descripcion"].ToString();
                 }
                 else
@@ -58,7 +58,7 @@ namespace TrabajoPractico3
             if (RadioButtonList1.SelectedIndex == 0)
             {
 
-                this.SqlDataSource1.DeleteParameters["idC"].DefaultValue = this.Label4.Text;
+                this.SqlDataSource1.DeleteParameters["id"].DefaultValue = this.Label4.Text;
                 
                 int cant = this.SqlDataSource1.Delete();
                 if (cant == 1)
@@ -69,7 +69,7 @@ namespace TrabajoPractico3
             }
             else if (RadioButtonList1.SelectedIndex == 1)
             {
-                this.SqlDataSource2.DeleteParameters["idC"].DefaultValue = this.Label4.Text;
+                this.SqlDataSource2.DeleteParameters["id"].DefaultValue = this.Label4.Text;
                 
                 int cant = this.SqlDataSource2.Delete();
                 if (cant == 1)

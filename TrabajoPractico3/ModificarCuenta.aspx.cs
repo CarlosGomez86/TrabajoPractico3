@@ -19,13 +19,13 @@ namespace TrabajoPractico3
         {
             if (RadioButtonList1.SelectedIndex == 0)
             {
-                this.SqlDataSource1.SelectParameters["idC"].DefaultValue = this.TextBox1.Text;
+                this.SqlDataSource1.SelectParameters["id"].DefaultValue = this.TextBox1.Text;
                 this.SqlDataSource1.DataSourceMode = SqlDataSourceMode.DataReader;
                 SqlDataReader datos;
                 datos = (SqlDataReader)this.SqlDataSource1.Select(DataSourceSelectArguments.Empty);
                 if (datos.Read())
                 {
-                    this.Label5.Text = datos["idC"].ToString();
+                    this.Label5.Text = datos["id"].ToString();
                     this.TextBox3.Text = datos["descripcion"].ToString();
                 }
                 else
@@ -40,7 +40,7 @@ namespace TrabajoPractico3
                 datos = (SqlDataReader)this.SqlDataSource3.Select(DataSourceSelectArguments.Empty);
                 if (datos.Read())
                 {
-                    this.Label5.Text = datos["idC"].ToString() ;
+                    this.Label5.Text = datos["id"].ToString() ;
                     this.TextBox3.Text = datos["descripcion"].ToString();
                 }
                 else
@@ -54,7 +54,7 @@ namespace TrabajoPractico3
 
             if (RadioButtonList1.SelectedIndex == 0) {
 
-                this.SqlDataSource1.UpdateParameters["idC"].DefaultValue = this.Label5.Text;
+                this.SqlDataSource1.UpdateParameters["id"].DefaultValue = this.Label5.Text;
                 this.SqlDataSource1.UpdateParameters["descripcion"].DefaultValue = this.TextBox3.Text;
                 int cant=this.SqlDataSource1.Update();
                 if (cant == 1)
@@ -65,7 +65,7 @@ namespace TrabajoPractico3
                 }
             else if(RadioButtonList1.SelectedIndex == 1)
             {
-                this.SqlDataSource3.UpdateParameters["idC"].DefaultValue = this.Label5.Text;
+                this.SqlDataSource3.UpdateParameters["id"].DefaultValue = this.Label5.Text;
                 this.SqlDataSource3.UpdateParameters["descripcion"].DefaultValue = this.TextBox3.Text;
                 int cant = this.SqlDataSource3.Update();
                 if (cant == 1)

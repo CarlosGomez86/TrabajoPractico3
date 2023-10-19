@@ -68,17 +68,17 @@
                 <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Aceptar" />
                 &nbsp;<asp:Label ID="Label11" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium"></asp:Label>
                 <br />
-                &nbsp;<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (idC = @idC)">
+                &nbsp;<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (id = @id)">
                     <SelectParameters>
-                        <asp:Parameter Name="idC" />
+                        <asp:Parameter Name="id" />
                     </SelectParameters>
                 </asp:SqlDataSource>
-                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
                     <SelectParameters>
-                        <asp:Parameter Name="idC" />
+                        <asp:Parameter Name="descripcion" />
                     </SelectParameters>
                 </asp:SqlDataSource>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" SelectCommand="SELECT RegistrosContables.id, RegistrosContables.idCuenta, RegistrosContables.monto, RegistrosContables.tipo, cue.idC FROM RegistrosContables INNER JOIN Cuentas AS cue ON RegistrosContables.idCuenta = cue.idC WHERE (RegistrosContables.idCuenta = @idCuenta)">
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" SelectCommand="SELECT RegistrosContables.id, RegistrosContables.idCuenta, RegistrosContables.monto, RegistrosContables.tipo, cue.id FROM RegistrosContables INNER JOIN Cuentas AS cue ON RegistrosContables.idCuenta = cue.id WHERE (RegistrosContables.idCuenta = @idCuenta)" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>">
                     <SelectParameters>
                         <asp:Parameter Name="idCuenta" />
                     </SelectParameters>
@@ -89,7 +89,7 @@
                     <asp:Panel ID="Panel3" runat="server" BackColor="#FF9966" Height="103px" HorizontalAlign="Right">
                         <br />
                         <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" Font-Italic="True" NavigateUrl="~/Principal.aspx">Ir a la página principal</asp:HyperLink>
-                        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT monto FROM RegistrosContables WHERE (id = @id)" UpdateCommand="update RegistrosContables set monto=@monto,tipo=@tipo where id=@id">
+                        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT monto FROM RegistrosContables WHERE (id = @id)" UpdateCommand="update RegistrosContables set monto=@monto,tipo=@tipo where id=@id">
                             <SelectParameters>
                                 <asp:Parameter Name="id" />
                             </SelectParameters>

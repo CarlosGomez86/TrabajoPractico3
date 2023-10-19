@@ -37,23 +37,23 @@
                    <br />
                    &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Buscar" />
                    <br />
-                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (idC = @idC)" UpdateCommand="UPDATE Cuentas SET descripcion = @descripcion WHERE (idC = @idC)">
+                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (id = @id)" UpdateCommand="UPDATE Cuentas SET descripcion = @descripcion WHERE (id = @id)">
                        <SelectParameters>
-                           <asp:Parameter Name="idC" />
+                           <asp:Parameter Name="id" />
                        </SelectParameters>
                        <UpdateParameters>
                            <asp:Parameter Name="descripcion" />
-                           <asp:Parameter Name="idC" />
+                           <asp:Parameter Name="id" />
                        </UpdateParameters>
                    </asp:SqlDataSource>
                    <br />
-                   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC,descripcion FROM Cuentas WHERE descripcion=@descripcion" UpdateCommand="UPDATE Cuentas SET descripcion=@descripcion WHERE idC=@idC">
+                   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id,descripcion FROM Cuentas WHERE descripcion=@descripcion" UpdateCommand="UPDATE Cuentas SET descripcion=@descripcion WHERE id=@id">
                        <SelectParameters>
                            <asp:Parameter Name="descripcion" />
                        </SelectParameters>
                        <UpdateParameters>
                            <asp:Parameter Name="descripcion" />
-                           <asp:Parameter Name="idC" />
+                           <asp:Parameter Name="id" />
                        </UpdateParameters>
                    </asp:SqlDataSource>
                    &nbsp;&nbsp;&nbsp;<asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Text="Número de cuenta:"></asp:Label>

@@ -52,18 +52,18 @@
                 </asp:DropDownList>
                 &nbsp;<asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Eliminar" />
                 &nbsp;<asp:Label ID="Label10" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium"></asp:Label>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (idC = @idC)">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (id = @id)">
                     <SelectParameters>
-                        <asp:Parameter Name="idC" />
+                        <asp:Parameter Name="id" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <br />
-                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
                     <SelectParameters>
-                        <asp:Parameter Name="idC" />
+                        <asp:Parameter Name="descripcion" />
                     </SelectParameters>
                 </asp:SqlDataSource>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" DeleteCommand="delete from RegistrosContables where id=@id" SelectCommand="SELECT RegistrosContables.id, RegistrosContables.idCuenta, RegistrosContables.monto, RegistrosContables.tipo, cue.idC FROM RegistrosContables INNER JOIN Cuentas AS cue ON RegistrosContables.idCuenta = cue.idC WHERE (RegistrosContables.idCuenta = @idCuenta)">
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" DeleteCommand="delete from RegistrosContables where id=@id" SelectCommand="SELECT RegistrosContables.id, RegistrosContables.idCuenta, RegistrosContables.monto, RegistrosContables.tipo, cue.id FROM RegistrosContables INNER JOIN Cuentas AS cue ON RegistrosContables.idCuenta = cue.id WHERE (RegistrosContables.idCuenta = @idCuenta)" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>">
                     <DeleteParameters>
                         <asp:Parameter Name="id" />
                     </DeleteParameters>

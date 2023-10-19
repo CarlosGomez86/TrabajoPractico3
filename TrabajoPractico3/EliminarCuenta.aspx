@@ -44,17 +44,17 @@
                      <br />
 &nbsp;&nbsp;<asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium"></asp:Label>
                      <br />
-                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" DeleteCommand="delete from Cuentas where idC=@idC" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (idC = @idC)">
+                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" DeleteCommand="delete from Cuentas where id=@id" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (id = @id)">
                          <DeleteParameters>
-                             <asp:Parameter Name="idC" />
+                             <asp:Parameter Name="id" />
                          </DeleteParameters>
                          <SelectParameters>
-                             <asp:Parameter Name="idC" />
+                             <asp:Parameter Name="id" />
                          </SelectParameters>
                      </asp:SqlDataSource>
-                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" DeleteCommand="delete from Cuentas where idC=@idC" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
+                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" DeleteCommand="delete from Cuentas where id=@id" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
                          <DeleteParameters>
-                             <asp:Parameter Name="idC" />
+                             <asp:Parameter Name="id" />
                          </DeleteParameters>
                          <SelectParameters>
                              <asp:Parameter Name="descripcion" />

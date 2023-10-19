@@ -43,14 +43,14 @@
                       <br />
                       <br />
                       &nbsp;<asp:Label ID="Label4" runat="server"></asp:Label>
-                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (descripcion = @descripcion)" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>">
                           <SelectParameters>
                               <asp:Parameter Name="descripcion" />
                           </SelectParameters>
                       </asp:SqlDataSource>
-                      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (idC = @idC)">
+                      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (id = @id)">
                           <SelectParameters>
-                              <asp:Parameter Name="idC" />
+                              <asp:Parameter Name="id" />
                           </SelectParameters>
                       </asp:SqlDataSource>
                   </asp:Panel>

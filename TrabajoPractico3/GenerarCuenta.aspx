@@ -34,12 +34,12 @@
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Aceptar" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label3" runat="server"></asp:Label>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=LAPTOP-OLNED4HD;Initial Catalog=trabajoPractico3;Integrated Security=True" InsertCommand="INSERT INTO Cuentas (descripcion) VALUES(@descripcion)" ProviderName="System.Data.SqlClient">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" InsertCommand="INSERT INTO Cuentas (descripcion) VALUES(@descripcion)" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>">
                     <InsertParameters>
                         <asp:Parameter Name="descripcion" />
                     </InsertParameters>
                 </asp:SqlDataSource>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=LAPTOP-OLNED4HD;Initial Catalog=trabajoPractico3;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT idC,descripcion FROM Cuentas WHERE descripcion=@descripcion">
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id,descripcion FROM Cuentas WHERE descripcion=@descripcion">
                     <SelectParameters>
                         <asp:Parameter Name="descripcion" />
                     </SelectParameters>

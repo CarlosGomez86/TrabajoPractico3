@@ -19,7 +19,7 @@ namespace TrabajoPractico3
         {
             if (RadioButtonList1.SelectedIndex == 0)
             {
-                this.SqlDataSource1.SelectParameters["idC"].DefaultValue = this.TextBox1.Text;
+                this.SqlDataSource1.SelectParameters["id"].DefaultValue = this.TextBox1.Text;
                 this.SqlDataSource1.DataSourceMode = SqlDataSourceMode.DataReader;
                 SqlDataReader datos;
                 datos = (SqlDataReader)this.SqlDataSource1.Select(DataSourceSelectArguments.Empty);
@@ -27,7 +27,7 @@ namespace TrabajoPractico3
                 {
                     this.Label5.Text = "Número de cuenta";
                     this.Label7.Text = "Nombre y apellido";
-                    this.Label6.Text = datos["idC"].ToString();
+                    this.Label6.Text = datos["id"].ToString();
                     this.Label8.Text = datos["descripcion"].ToString();
                 }
                 else
@@ -44,7 +44,7 @@ namespace TrabajoPractico3
                 {
                     this.Label5.Text = "Número de cuenta";
                     this.Label7.Text = "Nombre y apellido";
-                    this.Label6.Text = datos["idC"].ToString();
+                    this.Label6.Text = datos["id"].ToString();
                     this.Label8.Text = datos["descripcion"].ToString();
                 }
                 else

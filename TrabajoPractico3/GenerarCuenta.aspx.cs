@@ -33,7 +33,7 @@ namespace TrabajoPractico3
             SqlDataReader datos;
             datos = (SqlDataReader)this.SqlDataSource2.Select(DataSourceSelectArguments.Empty);
             if (datos.Read())
-                this.Label3.Text = " <br><br><br>Registro exitoso! <br>Titular: " + datos["descripcion"] + "<br>Cuenta Nro: " + datos["idC"];
+                this.Label3.Text = " <br><br><br>Registro exitoso! <br>Titular: " + datos["descripcion"] + "<br>Cuenta Nro: " + datos["id"];
             else
                 this.Label3.Text = "Error al intentar generar la cuenta";
             

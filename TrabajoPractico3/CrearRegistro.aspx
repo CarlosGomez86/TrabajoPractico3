@@ -57,17 +57,17 @@
                 &nbsp;&nbsp;
                 <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Aceptar" />
                 &nbsp;<asp:Label ID="Label8" runat="server"></asp:Label>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" DataSourceMode="DataReader" InsertCommand="insert into RegistrosContables (idCuenta,monto,tipo) values (@idCuenta,@monto,@tipo)" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (idC = @idC)">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" DataSourceMode="DataReader" InsertCommand="insert into RegistrosContables (idCuenta,monto,tipo) values (@idCuenta,@monto,@tipo)" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (id = @id)">
                     <InsertParameters>
                         <asp:Parameter Name="idCuenta" />
                         <asp:Parameter Name="monto" />
                         <asp:Parameter Name="tipo" />
                     </InsertParameters>
                     <SelectParameters>
-                        <asp:Parameter Name="idC" />
+                        <asp:Parameter Name="id" />
                     </SelectParameters>
                 </asp:SqlDataSource>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:trabajoPractico3ConnectionString %>" DataSourceMode="DataReader" ProviderName="<%$ ConnectionStrings:trabajoPractico3ConnectionString.ProviderName %>" SelectCommand="SELECT idC, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TP3ConnectionString %>" DataSourceMode="DataReader" ProviderName="<%$ ConnectionStrings:TP3ConnectionString.ProviderName %>" SelectCommand="SELECT id, descripcion FROM Cuentas WHERE (descripcion = @descripcion)">
                     <SelectParameters>
                         <asp:Parameter Name="descripcion" />
                     </SelectParameters>
